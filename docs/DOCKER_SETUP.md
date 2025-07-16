@@ -2,35 +2,7 @@
 
 This document explains the fixes made to enable docker-compose functionality for the Xcel Itron smart meter to MQTT bridge.
 
-## What Was Fixed
 
-### 1. Updated `docker-compose.yaml`
-- **Changed MQTT broker**: Switched from `emqx/nanomq` to `eclipse-mosquitto:latest` for better compatibility
-- **Added proper volumes**: Configured persistent volumes for MQTT data and logs
-- **Fixed environment variables**: Moved all environment variables directly into the compose file
-- **Added network mode**: Set `network_mode: host` for better mDNS discovery
-- **Added restart policy**: Set `restart: unless-stopped` for reliability
-
-### 2. Created Helper Scripts
-
-#### `setup.sh`
-- Automatically generates SSL certificates and LFDI string
-- Creates `.env` file with all required environment variables
-- Provides step-by-step instructions for Xcel Energy Launchpad registration
-
-#### `monitor_mqtt.sh`
-- Monitors MQTT messages from the smart meter
-- Shows real-time data flow to verify connectivity
-
-#### `test_setup.sh`
-- Validates the entire setup
-- Checks for certificates, .env file, Docker availability
-- Shows service status and recent logs
-
-### 3. Updated Documentation
-- Enhanced README.md with quick start instructions
-- Added troubleshooting section
-- Documented all environment variables
 
 ## Quick Start Guide
 
