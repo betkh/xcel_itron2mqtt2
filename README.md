@@ -2,7 +2,8 @@
 
 Recently Xcel energy rolled out smart meter installations to facilitate TOU(Time of Use) pricing. This also benefits us, the users, as it provides us with a free way to see how much energy we're using at any time. This repo will help you get up and running with a python program that will query your meter on your network and convert its readings to MQTT messages.
 
-![Homeassistant Screenshot](docs/homeassistant_screenshot.png)
+
+<img src="docs/homeassistant_screenshot.png" alt="Homeassistant Screenshot" height="500"/>
 
 ## Setup
 
@@ -53,13 +54,13 @@ The easiest way to get started is using the provided setup script:
 
 # Edit .env file to add your meter IP address
 # Then start the services
-docker-compose up -d
+docker compose up -d
 
 # Check the logs
-docker-compose logs -f xcel_itron2mqtt
+sudo docker compose logs -f xcel_itron2mqtt
 
 # Monitor MQTT messages
-docker-compose exec mosquitto mosquitto_sub -t 'homeassistant/#' -v
+docker compose exec mosquitto mosquitto_sub -t 'homeassistant/#' -v
 ```
 
 ### Manual Setup
@@ -78,7 +79,7 @@ docker-compose exec mosquitto mosquitto_sub -t 'homeassistant/#' -v
 
 3. **Start services:**
    ```bash
-   docker-compose up -d
+   docker compose up -d
    ```
 
 ### Environment Variables
